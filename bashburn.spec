@@ -13,9 +13,6 @@ Requires:	cdrdao
 Requires:	cdrtools
 Requires:	cdrtools-cdda2wav
 Requires:	cdrtools-mkisofs
-Requires:	flac
-Requires:	mpg123
-Requires:	vorbis-tools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
