@@ -3,12 +3,11 @@ Summary(pl):	BashBurn - nagrywanie p³yt pod konsol±
 Name:		BashBurn
 Version:	1.5.2
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/bashburn/%{name}-%{version}.tar.gz
 # Source0-md5:	485602349afaaff7f0948322d7f3489b
 URL:		http://bashburn.sourceforge.net
-Requires:	/bin/bash
 Requires:	cdrdao
 Requires:	cdrtools
 Requires:	cdrtools-cdda2wav
