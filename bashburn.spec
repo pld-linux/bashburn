@@ -1,13 +1,13 @@
 Summary:	BashBurn - burning CDs at console
 Summary(pl):	BashBurn - nagrywanie p³yt pod konsol±
 Name:		BashBurn
-Version:	1.5.2
+Version:	1.5.2.1
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/bashburn/%{name}-%{version}.tar.gz
-# Source0-md5:	485602349afaaff7f0948322d7f3489b
-URL:		http://bashburn.sourceforge.net
+# Source0-md5:	a42408cc0f363bc041c332e142ba502f
+URL:		http://bashburn.sourceforge.net/
 Requires:	cdrdao
 Requires:	cdrtools
 Requires:	cdrtools-cdda2wav
@@ -30,11 +30,12 @@ audio, czyszczenie CD-RW, wielosesyjno¶æ i wiêcej.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}/{burning,config,convert,lang/English,menus,misc},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}/{burning,config,convert,lang/English,lang/Polish,menus,misc},%{_sysconfdir}}
 install burning/* $RPM_BUILD_ROOT%{_datadir}/%{name}/burning
 install config/* $RPM_BUILD_ROOT%{_datadir}/%{name}/config
 install convert/* $RPM_BUILD_ROOT%{_datadir}/%{name}/convert
 install lang/English/* $RPM_BUILD_ROOT%{_datadir}/%{name}/lang/English
+install lang/Polish/* $RPM_BUILD_ROOT%{_datadir}/%{name}/lang/Polish
 install menus/* $RPM_BUILD_ROOT%{_datadir}/%{name}/menus
 install misc/* $RPM_BUILD_ROOT%{_datadir}/%{name}/misc
 install BashBurn.sh $RPM_BUILD_ROOT%{_bindir}/bashburn
