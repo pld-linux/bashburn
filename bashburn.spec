@@ -48,9 +48,6 @@ sed "s|%{_prefix}/local|%{_datadir}|" bashburnrc > $RPM_BUILD_ROOT%{_sysconfdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-echo "Please edit %{_sysconfdir}/bashbburn.conf now!"
-
 %files
 %defattr(644,root,root,755)
 %doc CREDITS ChangeLog FAQ README TODO
