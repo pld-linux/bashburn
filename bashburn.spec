@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/bashburn/%{name}-%{version}.tar.gz
-# Source0-md5:	b34ce2ac8c74794032adf13a5bf5cd1d
+# Source0-md5:	485602349afaaff7f0948322d7f3489b
 URL:		http://bashburn.sourceforge.net
 Requires:	/bin/bash
 Requires:	cdrdao
