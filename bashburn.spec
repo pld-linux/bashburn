@@ -51,4 +51,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc CREDITS ChangeLog FAQ README TODO
 %attr(755,root,root) %{_bindir}/bashburn
 %attr(755,root,root) %{_datadir}/%{_name}
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/bashburnrc
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/bashburnrc
