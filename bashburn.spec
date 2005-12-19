@@ -32,12 +32,15 @@ audio, czyszczenie CD-RW, wielosesyjno¶æ i wiêcej.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{_name}/{burning,config,convert,lang/English,lang/Polish,menus,misc},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{_name}/{burning,config,convert,menus,misc},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{English,German,Norwegian,Polish,Spanish}
+
+for lng in lang/* ; do
+	install $lng/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/$lng
+done
 install burning/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/burning
 install config/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/config
 install convert/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/convert
-install lang/English/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/English
-install lang/Polish/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/Polish
 install menus/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/menus
 install misc/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/misc
 install BashBurn.sh $RPM_BUILD_ROOT%{_bindir}/bashburn
@@ -50,5 +53,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CREDITS ChangeLog FAQ README TODO
 %attr(755,root,root) %{_bindir}/bashburn
-%attr(755,root,root) %{_datadir}/%{_name}
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/bashburnrc
+%dir %{_datadir}/%{_name}
+%attr(755,root,root) %{_datadir}/%{_name}/burning
+%attr(755,root,root) %{_datadir}/%{_name}/config
+%attr(755,root,root) %{_datadir}/%{_name}/convert
+%attr(755,root,root) %{_datadir}/%{_name}/menus
+%attr(755,root,root) %{_datadir}/%{_name}/misc
+%dir %{_datadir}/%{_name}/lang
+%{_datadir}/%{_name}/lang/English
+%lang(de) %{_datadir}/%{_name}/lang/German
+%lang(es) %{_datadir}/%{_name}/lang/Spanish
+%lang(nb) %{_datadir}/%{_name}/lang/Norwegian
+%lang(pl) %{_datadir}/%{_name}/lang/Polish
