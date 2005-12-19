@@ -1,13 +1,13 @@
+%define		_name	BashBurn
 Summary:	BashBurn - burning CDs at console
 Summary(pl):	BashBurn - nagrywanie p³yt pod konsol±
 Name:		bashburn
-%define	_name BashBurn  
-Version:	1.6
-Release:	3
+Version:	1.6.1
+Release:	1
 License:	GPL v2
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/bashburn/%{name}-%{version}.tar.gz
-# Source0-md5:	6a1bd27162641bf47357749f118eb0f7
+Source0:	http://dl.sourceforge.net/bashburn/%{_name}-%{version}.tar.gz
+# Source0-md5:	a5bb464fecf6e957244cf23245038e9d
 URL:		http://bashburn.sourceforge.net/
 Requires:	cdrdao
 Requires:	cdrtools
@@ -28,7 +28,7 @@ CD pod konsol±. Umo¿liwia nagrywanie CD z normalnymi danymi, p³yt
 audio, czyszczenie CD-RW, wielosesyjno¶æ i wiêcej.
 
 %prep
-%setup -q
+%setup -q -n %{_name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,7 +41,7 @@ install lang/Polish/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/Polish
 install menus/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/menus
 install misc/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/misc
 install BashBurn.sh $RPM_BUILD_ROOT%{_bindir}/bashburn
-sed "s|%{_prefix}/local|%{_datadir}|" bashburnrc > $RPM_BUILD_ROOT%{_sysconfdir}/bashburnrc
+sed "s|/usr/local|%{_datadir}|" bashburnrc > $RPM_BUILD_ROOT%{_sysconfdir}/bashburnrc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
