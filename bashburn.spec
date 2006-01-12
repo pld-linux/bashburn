@@ -18,16 +18,19 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-BashBurn is a bash script designed to make CD&DVD burning at the console
-easier. It supports burning normal data CDs, audio CDs, blanking
-CD-RWs, multisession, and more.
+BashBurn is a bash script designed to make CD & DVD burning at the
+console easier. It supports burning normal data CDs, audio CDs,
+blanking CD-RWs, multisession, and more.
+
 To use DVD burning you have to install:
 - dvdrtools
 
 %description -l pl
 BashBurn to skrypt w bashu zaprojektowany aby u³atwiæ nagrywanie p³yt
-CD pod konsol±. Umo¿liwia nagrywanie CD i DVD z normalnymi danymi, p³yt
-audio, czyszczenie CD-RW, wielosesyjno¶æ i wiêcej.
+CD z poziomu terminala tekstowego. Umo¿liwia nagrywanie CD i DVD z
+normalnymi danymi, p³yt audio, czyszczenie CD-RW, wielosesyjno¶æ i
+wiêcej.
+
 Aby nagrywaæ DVD, nale¿y zainstalowaæ:
 - dvdrtools
 
