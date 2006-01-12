@@ -2,12 +2,12 @@
 Summary:	BashBurn - burning CDs at console
 Summary(pl):	BashBurn - nagrywanie p³yt pod konsol±
 Name:		bashburn
-Version:	1.6.1
+Version:	1.7a2
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/bashburn/%{_name}-%{version}.tar.gz
-# Source0-md5:	a5bb464fecf6e957244cf23245038e9d
+# Source0-md5:	1d613ba36a5d3eb9386238d7f6b70694
 URL:		http://bashburn.sourceforge.net/
 Requires:	cdrdao
 Requires:	cdrtools
@@ -18,22 +18,26 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-BashBurn is a bash script designed to make CD burning at the console
+BashBurn is a bash script designed to make CD&DVD burning at the console
 easier. It supports burning normal data CDs, audio CDs, blanking
 CD-RWs, multisession, and more.
+To use DVD burning you have to install:
+- dvdrtools
 
 %description -l pl
 BashBurn to skrypt w bashu zaprojektowany aby u³atwiæ nagrywanie p³yt
-CD pod konsol±. Umo¿liwia nagrywanie CD z normalnymi danymi, p³yt
+CD pod konsol±. Umo¿liwia nagrywanie CD i DVD z normalnymi danymi, p³yt
 audio, czyszczenie CD-RW, wielosesyjno¶æ i wiêcej.
+Aby nagrywaæ DVD, nale¿y zainstalowaæ:
+- dvdrtools
 
 %prep
-%setup -q -n %{_name}
+%setup -q -n %{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{_name}/{burning,config,convert,menus,misc},%{_sysconfdir}}
-install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{English,German,Norwegian,Polish,Spanish}
+install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{English,German,Norwegian,Polish,Spanish,Czech}
 
 for lng in lang/* ; do
 	install $lng/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/$lng
@@ -66,3 +70,4 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/%{_name}/lang/Spanish
 %lang(nb) %{_datadir}/%{_name}/lang/Norwegian
 %lang(pl) %{_datadir}/%{_name}/lang/Polish
+%lang(cz) %{_datadir}/%{_name}/lang/Czech
