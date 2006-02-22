@@ -10,9 +10,9 @@ Source0:	http://dl.sourceforge.net/bashburn/%{_name}-%{version}.tar.gz
 # Source0-md5:	1d613ba36a5d3eb9386238d7f6b70694
 URL:		http://bashburn.sourceforge.net/
 Requires:	cdrdao
-Requires:	cdrtools
-Requires:	cdrtools-cdda2wav
-Requires:	cdrtools-mkisofs
+Requires:	cdrecord
+Requires:	cdda2wav
+Requires:	mkisofs
 Obsoletes:	BashBurn
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,7 +40,7 @@ Aby nagrywaæ DVD, nale¿y zainstalowaæ:
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{_name}/{burning,config,convert,menus,misc},%{_sysconfdir}}
-install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{English,German,Norwegian,Polish,Spanish,Czech}
+install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{Czech,English,German,Norwegian,Polish,Spanish}
 
 for lng in lang/* ; do
 	install $lng/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/$lng
@@ -69,8 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/%{_name}/misc
 %dir %{_datadir}/%{_name}/lang
 %{_datadir}/%{_name}/lang/English
+%lang(cz) %{_datadir}/%{_name}/lang/Czech
 %lang(de) %{_datadir}/%{_name}/lang/German
 %lang(es) %{_datadir}/%{_name}/lang/Spanish
 %lang(nb) %{_datadir}/%{_name}/lang/Norwegian
 %lang(pl) %{_datadir}/%{_name}/lang/Polish
-%lang(cz) %{_datadir}/%{_name}/lang/Czech
