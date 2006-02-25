@@ -3,7 +3,7 @@ Summary:	BashBurn - burning CDs at console
 Summary(pl):	BashBurn - nagrywanie p³yt pod konsol±
 Name:		bashburn
 Version:	1.7.1
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/bashburn/%{_name}-%{version}.tar.gz
@@ -35,12 +35,12 @@ Aby nagrywaæ DVD, nale¿y zainstalowaæ:
 - dvdrtools
 
 %prep
-%setup -q
+%setup -q -n %{_name}-%{version}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{_name}/{burning,config,convert,menus,misc},%{_sysconfdir}}
-install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{Czech,English,German,Norwegian,Polish,Spanish}
+install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{Czech,English,German,Norwegian,Polish,Spanish,Swedish}
 
 for lng in lang/* ; do
 	install $lng/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/$lng
@@ -74,3 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/%{_name}/lang/Spanish
 %lang(nb) %{_datadir}/%{_name}/lang/Norwegian
 %lang(pl) %{_datadir}/%{_name}/lang/Polish
+%lang(sw) %{_datadir}/%{_name}/lang/Swedish
