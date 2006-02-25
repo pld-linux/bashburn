@@ -2,7 +2,7 @@
 Summary:	BashBurn - burning CDs at console
 Summary(pl):	BashBurn - nagrywanie p³yt pod konsol±
 Name:		bashburn
-Version:	1.7a2
+Version:	1.7.1
 Release:	1
 License:	GPL v2
 Group:		Applications/System
@@ -35,7 +35,7 @@ Aby nagrywaæ DVD, nale¿y zainstalowaæ:
 - dvdrtools
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}
 
 %install
 rm -rf $RPM_BUILD_ROOT
