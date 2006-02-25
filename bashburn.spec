@@ -74,4 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/%{_name}/lang/Spanish
 %lang(nb) %{_datadir}/%{_name}/lang/Norwegian
 %lang(pl) %{_datadir}/%{_name}/lang/Polish
-%lang(sw) %{_datadir}/%{_name}/lang/Swedish
+%lang(sv) %{_datadir}/%{_name}/lang/Swedish
