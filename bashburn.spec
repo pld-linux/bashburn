@@ -35,7 +35,7 @@ Aby nagrywaæ DVD, nale¿y zainstalowaæ:
 - dvdrtools
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %install
 rm -rf $RPM_BUILD_ROOT
