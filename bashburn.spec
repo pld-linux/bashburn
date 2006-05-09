@@ -2,12 +2,12 @@
 Summary:	BashBurn - burning CDs at console
 Summary(pl):	BashBurn - nagrywanie p³yt pod konsol±
 Name:		bashburn
-Version:	1.7.1
+Version:	1.8.0
 Release:	3
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/bashburn/%{_name}-%{version}.tar.gz
-# Source0-md5:	612ab3cae4e96f32c83691b0d4b82d8d
+# Source0-md5:	c6d271c3fe2e1d01d38f8bb2b87dcad8
 URL:		http://bashburn.sourceforge.net/
 Requires:	cdrdao
 Requires:	cdrecord
