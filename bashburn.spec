@@ -1,6 +1,6 @@
 %define		_name	BashBurn
 Summary:	BashBurn - burning CDs at console
-Summary(pl):	BashBurn - nagrywanie p³yt pod konsol±
+Summary(pl.UTF-8):   BashBurn - nagrywanie pÅ‚yt pod konsolÄ…
 Name:		bashburn
 Version:	1.8.5
 Release:	3
@@ -25,13 +25,13 @@ blanking CD-RWs, multisession, and more.
 To use DVD burning you have to install:
 - dvdrtools
 
-%description -l pl
-BashBurn to skrypt w bashu zaprojektowany aby u³atwiæ nagrywanie p³yt
-CD z poziomu terminala tekstowego. Umo¿liwia nagrywanie CD i DVD z
-normalnymi danymi, p³yt audio, czyszczenie CD-RW, wielosesyjno¶æ i
-wiêcej.
+%description -l pl.UTF-8
+BashBurn to skrypt w bashu zaprojektowany aby uÅ‚atwiÄ‡ nagrywanie pÅ‚yt
+CD z poziomu terminala tekstowego. UmoÅ¼liwia nagrywanie CD i DVD z
+normalnymi danymi, pÅ‚yt audio, czyszczenie CD-RW, wielosesyjnoÅ›Ä‡ i
+wiÄ™cej.
 
-Aby nagrywaæ DVD, nale¿y zainstalowaæ:
+Aby nagrywaÄ‡ DVD, naleÅ¼y zainstalowaÄ‡:
 - dvdrtools
 
 %prep
