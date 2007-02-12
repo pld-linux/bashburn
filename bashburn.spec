@@ -1,6 +1,6 @@
 %define		_name	BashBurn
 Summary:	BashBurn - burning CDs at console
-Summary(pl.UTF-8):   BashBurn - nagrywanie płyt pod konsolą
+Summary(pl.UTF-8):	BashBurn - nagrywanie płyt pod konsolą
 Name:		bashburn
 Version:	1.8.5
 Release:	3
