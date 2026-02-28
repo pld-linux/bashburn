@@ -3,7 +3,7 @@ Summary:	BashBurn - burning CDs at console
 Summary(pl.UTF-8):	BashBurn - nagrywanie płyt pod konsolą
 Name:		bashburn
 Version:	1.8.5
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/bashburn/%{_name}-%{version}.tar.gz
