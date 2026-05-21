@@ -2,12 +2,12 @@
 Summary:	BashBurn - burning CDs at console
 Summary(pl.UTF-8):	BashBurn - nagrywanie płyt pod konsolą
 Name:		bashburn
-Version:	1.8.5
-Release:	4
+Version:	2.1.2
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/bashburn/%{_name}-%{version}.tar.gz
-# Source0-md5:	8d3d3545fcfb0bf0bf734992699b4759
+# Source0-md5:	7ffe68291307aff24ec43d45d6866f6d
 URL:		http://bashburn.sourceforge.net/
 Requires:	cdrdao
 Requires:	cdrecord
@@ -37,10 +37,19 @@ Aby nagrywać DVD, należy zainstalować:
 %prep
 %setup -q -n %{_name}-%{version}
 
+%{__sed} -i -e '1s,#!/usr/bin/env bash,#!/bin/bash,' \
+	BashBurn.sh \
+	burning/*.sh \
+	config/*.sh \
+	convert/*.sh \
+	func/*.sh \
+	menus/*.sh \
+	misc/*.sh
+
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{_name}/{burning,config,convert,menus,misc},%{_sysconfdir}}
-install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{Czech,English,German,Norwegian,Polish,Spanish,Swedish}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{_name}/{burning,config,convert,func,menus,misc},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT%{_datadir}/%{_name}/lang/{English,German,Spanish,Swedish}
 
 for lng in lang/* ; do
 	install $lng/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/$lng
@@ -48,6 +57,7 @@ done
 install burning/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/burning
 install config/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/config
 install convert/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/convert
+install func/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/func
 install menus/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/menus
 install misc/* $RPM_BUILD_ROOT%{_datadir}/%{_name}/misc
 install BashBurn.sh $RPM_BUILD_ROOT%{_bindir}/bashburn
@@ -58,20 +68,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS ChangeLog FAQ README TODO
+%doc CREDITS ChangeLog FAQ HOWTO README TODO
 %attr(755,root,root) %{_bindir}/bashburn
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/bashburnrc
 %dir %{_datadir}/%{_name}
 %attr(755,root,root) %{_datadir}/%{_name}/burning
 %attr(755,root,root) %{_datadir}/%{_name}/config
 %attr(755,root,root) %{_datadir}/%{_name}/convert
+%attr(755,root,root) %{_datadir}/%{_name}/func
 %attr(755,root,root) %{_datadir}/%{_name}/menus
 %attr(755,root,root) %{_datadir}/%{_name}/misc
 %dir %{_datadir}/%{_name}/lang
 %{_datadir}/%{_name}/lang/English
-%lang(cz) %{_datadir}/%{_name}/lang/Czech
 %lang(de) %{_datadir}/%{_name}/lang/German
 %lang(es) %{_datadir}/%{_name}/lang/Spanish
-%lang(nb) %{_datadir}/%{_name}/lang/Norwegian
-%lang(pl) %{_datadir}/%{_name}/lang/Polish
 %lang(sv) %{_datadir}/%{_name}/lang/Swedish
